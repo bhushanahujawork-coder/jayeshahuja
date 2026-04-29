@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jayesh Ahuja | Financial Companion Pro</title>
+    <meta name="description" content="Premium, smart financial calculator with real-feel interactions and intelligent insights.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="app-container">
+            <header class="app-header">
+                <div class="brand">
+                    <span class="brand-name">JAYESH AHUJA</span>
+                    <span class="brand-tagline">FROM EMI TO INVESTMENTS — ALL IN ONE SMART CALCULATOR</span>
+                </div>
+                <nav class="mode-tabs">
+                    <button class="tab-btn active" data-mode="loan">Loan</button>
+                    <button class="tab-btn" data-mode="invest">Invest</button>
+                    <button class="tab-btn" data-mode="advanced">Advanced</button>
+                    <button class="tab-btn" data-mode="basic">Basic</button>
+                </nav>
+            </header>
+
+            <main class="calculator-core">
+                <section class="display-container" id="display-container">
+                    <div class="status-bar">
+                        <span class="mode-indicator" id="mode-indicator">LOAN MODE</span>
+                        <span class="step-indicator" id="step-indicator">1 / 3</span>
+                    </div>
+
+                    <div class="advanced-controls" id="advanced-controls" style="display: none;">
+                        <nav class="sub-tabs">
+                            <button class="sub-tab active" data-submode="npv">NPV</button>
+                            <button class="sub-tab" data-submode="irr">IRR</button>
+                        </nav>
+                        <div class="cashflow-actions">
+                            <button id="btn-add-cashflow" class="mini-btn">+ Add Cash Flow</button>
+                        </div>
+                    </div>
+                    
+                    <div class="display-label-group">
+                        <span class="display-hint" id="display-hint">Enter Loan Amount</span>
+                        <span class="active-field-label" id="active-field-label">Principal</span>
+                    </div>
+
+                    <div class="main-display">
+                        <span class="currency-symbol" id="currency-symbol">₹</span>
+                        <div class="value-wrapper">
+                            <span class="display-value" id="display-value">0</span>
+                        </div>
+                        <span class="cursor"></span>
+                    </div>
+
+                    <div class="summary-strip" id="summary-strip">
+                        <!-- Shows small summary like "Tenure: 7 Years" -->
+                    </div>
+
+                    <div class="cashflow-list-container" id="cashflow-list-container" style="display: none;">
+                        <div class="cashflow-list" id="cashflow-list">
+                            <!-- Dynamic cash flows: Year 1: ₹50,000 -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="keypad-container">
+                    <div class="keypad-grid">
+                        <!-- Row 1 -->
+                        <button class="key action-key" data-key="clear">AC</button>
+                        <button class="key action-key" data-key="backspace" id="key-backspace">⌫</button>
+                        <button class="key action-key" data-key="toggle-sign">+/-</button>
+                        <button class="key op-key" data-key="divide">÷</button>
+                        
+                        <!-- Row 2 -->
+                        <button class="key num-key" data-key="7">7</button>
+                        <button class="key num-key" data-key="8">8</button>
+                        <button class="key num-key" data-key="9">9</button>
+                        <button class="key op-key" data-key="multiply">×</button>
+                        
+                        <!-- Row 3 -->
+                        <button class="key num-key" data-key="4">4</button>
+                        <button class="key num-key" data-key="5">5</button>
+                        <button class="key num-key" data-key="6">6</button>
+                        <button class="key op-key" data-key="subtract">−</button>
+                        
+                        <!-- Row 4 -->
+                        <button class="key num-key" data-key="1">1</button>
+                        <button class="key num-key" data-key="2">2</button>
+                        <button class="key num-key" data-key="3">3</button>
+                        <button class="key op-key" data-key="add">+</button>
+                        
+                        <!-- Row 5 -->
+                        <button class="key num-key" data-key="0">0</button>
+                        <button class="key num-key" data-key="decimal">.</button>
+                        <button class="key primary-key wide" data-key="next" id="key-next">NEXT STEP</button>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="insight-overlay" id="insight-overlay">
+                <div class="results-row" id="results-row">
+                    <!-- Dynamic result cards: EMI, Interest, Total -->
+                </div>
+                
+                <div class="smart-insight-card" id="smart-insight-card">
+                    <div class="insight-header">
+                        <span class="insight-icon">✨</span>
+                        <span class="insight-title">Smart Insight</span>
+                    </div>
+                    <p class="insight-content" id="insight-content">
+                        Complete all steps to unlock financial analysis.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
